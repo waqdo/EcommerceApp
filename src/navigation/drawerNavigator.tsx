@@ -1,12 +1,13 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomeScreen from '../screens/home/HomeScreen';
+import { MyTabs } from './bottomTabNav';
+import { Image } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
-function MyDrawer() {
+export function MyDrawer() {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeScreen} />
+    <Drawer.Navigator screenOptions={{ headerShown: true, }}>
+      <Drawer.Screen name="HomeDrawer" component={MyTabs} options={{ title: 'Home' }} />
     </Drawer.Navigator>
   );
 }

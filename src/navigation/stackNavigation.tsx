@@ -1,17 +1,15 @@
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "../screens/home/HomeScreen";
-import { MyTabs } from "./bottomTabNav";
-
-
+import SplashScreen from "../screens/splash/SplashScreen";
+import { MyDrawer } from "./drawerNavigator";
 
 const Stack = createNativeStackNavigator();
 
 export function RootStack() {
   return (
-    <Stack.Navigator initialRouteName="Mytab">
-        <Stack.Screen name="Splash" component={HomeScreen} />
-      <Stack.Screen name="Mytab" component={MyTabs} />
+    <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Main" component={MyDrawer} />
     </Stack.Navigator>
   );
 }
